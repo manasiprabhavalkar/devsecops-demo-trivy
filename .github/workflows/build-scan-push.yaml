@@ -3,8 +3,8 @@ name: Build-Scan-Push
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-#  push:
-#    branches: [ master ]
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -57,10 +57,21 @@ jobs:
         image-ref: ${{ env.ImageName }}:github-${{ env.BuildNumber }}
         # Type of vulnerabilities
         vuln-type: 'os,library'
+        # Format of the results
+        format: 'template'
+        # Specify the right template
+        template: '@/contrib/sarif.tpl'
+        # Output file name
+        output: 'trivy-img-scan-results.sarif'
         # exit code when vulnerabilities were found
         exit-code: 1
         # severities of vulnerabilities to be displayed
         severity: HIGH,CRITICAL
+
+    - name: Upload Trivy scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: 'trivy-img-scan-results.sarif'
         
     - name: Push Docker image
       uses: docker/build-push-action@v1.1.0

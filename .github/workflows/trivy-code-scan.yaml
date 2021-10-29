@@ -3,8 +3,8 @@ name: Code-Scan
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -50,7 +50,7 @@ jobs:
         # Specify the right template
         template: '@/contrib/sarif.tpl'
         # Output file name
-        output: 'trivy-results.sarif'
+        output: 'trivy-code-scan-results.sarif'
         # exit code when vulnerabilities were found
     
     - name: Upload Trivy scan results to GitHub Security tab
