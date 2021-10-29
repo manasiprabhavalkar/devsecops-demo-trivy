@@ -54,7 +54,7 @@ jobs:
         # exit code when vulnerabilities were found
     
     - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: 'trivy-code-scan-results.sarif'
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: 'trivy-code-scan-results.sarif'
         
