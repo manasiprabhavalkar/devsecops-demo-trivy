@@ -1,8 +1,8 @@
 name: Flask Application
-#on:
-#  pull_request:
-#    branches:
-#    - master
+on:
+  pull_request:
+    branches:
+    - master
 jobs:
   build:
     runs-on: ubuntu-16.04

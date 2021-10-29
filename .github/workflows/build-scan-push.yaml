@@ -2,11 +2,11 @@ name: Build-Scan-Push
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-#on:
+on:
 #  push:
 #    branches: [ master ]
-#  pull_request:
-#    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 env:
   BuildNumber: ${{ github.run_id }}-${{ github.run_number }}
