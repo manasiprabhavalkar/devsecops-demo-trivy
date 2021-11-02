@@ -58,21 +58,12 @@ jobs:
         # Type of vulnerabilities
         vuln-type: 'os,library'
         # Format of the results
-        format: 'template'
-        # Specify the right template
-        template: '@/contrib/sarif.tpl'
-        # Output file name
-        output: 'trivy-img-scan-results.sarif'
+        format: 'table'
         # exit code when vulnerabilities were found
         exit-code: 1
         # severities of vulnerabilities to be displayed
         severity: HIGH,CRITICAL
 
-    - name: Upload Trivy scan results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: 'trivy-img-scan-results.sarif'
-        
     - name: Push Docker image
       uses: docker/build-push-action@v1.1.0
       with:
