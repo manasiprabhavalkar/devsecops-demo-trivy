@@ -3,8 +3,8 @@ name: Build-Scan-Push
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-#  push:
-#    branches: [ master ]
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -39,16 +39,6 @@ jobs:
         dockerfile: 'Dockerfile'
         # Whether to push the image
         push: false
-  
-    - name: Trivy Scan - Unknown, Low and Medium Severity
-      uses: aquasecurity/trivy-action@0.0.22
-      with:
-        # image reference
-        image-ref: ${{ env.ImageName }}:github-${{ env.BuildNumber }}
-        # exit code when vulnerabilities were found
-        exit-code: 0
-        # severities of vulnerabilities to be displayed
-        severity: UNKNOWN,LOW,MEDIUM
         
     - name: Trivy Scan - High and Critical Severity
       uses: aquasecurity/trivy-action@0.0.22
