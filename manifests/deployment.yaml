@@ -23,6 +23,6 @@ spec:
         - name:  http
           containerPort: 8080
           protocol: TCP
-      securityContext:
-        capabilities:
-          add: ["SYS_ADMIN"]
+        securityContext:
+          capabilities:
+            add: ["SYS_ADMIN"]

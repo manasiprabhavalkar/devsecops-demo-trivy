@@ -18,6 +18,6 @@ jobs:
           scan-type: 'config'
           hide-progress: false
           ignore-unfixed: true
-          severity: 'CRITICAL,HIGH,MEDIUM'
+          severity: 'CRITICAL,HIGH'
           format: 'table'
           exit-code: 1
