@@ -24,4 +24,22 @@ stages:
         azureSubscription: 'Aqua BD ARM connection'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
-        inlineScript: 'az acr build --image test:latest --registry aquamanasip .'
+        inlineScript: 'az acr build --image test:latest --registry aquamanasip . --no-push'
+
+    - task: Docker@2
+      displayName: Login into Aqua registry
+      inputs:
+        containerRegistry: "manasiaquaregistry"
+        command: "login"
+
+    - task: aquasecScanner@4
+      inputs:
+        image: test:latest
+        scanType: 'local'
+        register: false
+        hideBase: false
+        showNegligible: false
+        windowsScannerVersion: '4.2.0'
+        connection: 'Aqua Demo Console Manasi'
+        scanner: "registry.aquasec.com/scanner:5.0"
+        customFlags: "--layer-vulnerabilities"    
