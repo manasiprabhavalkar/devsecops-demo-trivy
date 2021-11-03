@@ -39,5 +39,5 @@ stages:
           curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
           chmod +x scannercli
           pwd
-          ./scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/  
+          scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/  
 --image-name aquamanasip.azurecr.io/test:latest --fs-scan /azp/
