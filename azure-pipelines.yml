@@ -31,7 +31,14 @@ stages:
       inputs:
         containerRegistry: "manasiaquaregistry"
         command: "login"
-
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo Write your commands here
+          
+          echo Hello world
+          
+          curl
     - task: aquasecScanner@4
       inputs:
         image: test:latest
