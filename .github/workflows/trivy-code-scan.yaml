@@ -24,13 +24,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - name: Trivy Scan - Critical Severity
+    - name: Trivy Scan
       uses: aquasecurity/trivy-action@0.0.22
       with:
         scan-type: 'fs'
         # Format of the results
         format: 'template'
-        severity: 'CRITICAL'
         # Specify the right template
         template: '@/contrib/sarif.tpl'
         # Output file name
