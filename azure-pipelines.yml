@@ -38,7 +38,8 @@ stages:
           
           echo Hello world
           
-          curl
+          curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
+          chmod +x scannercli
     - task: aquasecScanner@4
       inputs:
         image: test:latest
