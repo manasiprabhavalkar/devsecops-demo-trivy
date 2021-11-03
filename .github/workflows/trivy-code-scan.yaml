@@ -3,8 +3,8 @@ name: Code-Scan
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-#  push:
-#    branches: [ master ]
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -23,7 +23,23 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-        
+    
+    - name: Build Docker image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: ${{ secrets.DockerHubUser }}
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.DockerHubPassword }}
+        # Docker repository to tag the image with
+        repository: ${{ env.ImageName }}
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 'github-${{ env.BuildNumber }}'
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        dockerfile: 'Dockerfile'
+        # Whether to push the image
+        push: false
+    
     - name: Trivy Scan - High and Critical Severity
       uses: aquasecurity/trivy-action@0.0.22
       with:
