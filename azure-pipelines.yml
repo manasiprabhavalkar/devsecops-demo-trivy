@@ -40,4 +40,4 @@ stages:
           chmod +x scannercli
           pwd
           ls
-          ./scannercli scan -U administrator -P @Password -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/ --image-name aquamanasip.azurecr.io/test:latest --fs-scan /azp/_work/2/s
+          ./scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/ --image-name aquamanasip.azurecr.io/test:latest --fs-scan /azp/_work/2/s
