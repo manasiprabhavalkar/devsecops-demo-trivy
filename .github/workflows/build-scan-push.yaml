@@ -53,24 +53,26 @@ jobs:
         template: '@/contrib/sarif.tpl'
         # Output file name
         output: 'trivy-image-scan-results.sarif'
+        exit-code: 1
     
     - name: Upload Trivy scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v1
+      if: always()
       with:
         sarif_file: 'trivy-image-scan-results.sarif'
 
-#    - name: Push Docker image
-#      uses: docker/build-push-action@v1.1.0
-#      with:
-#        # Username used to log in to a Docker registry. If not set then no login will occur
-#        username: ${{ secrets.DockerHubUser }}
-#        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-#        password: ${{ secrets.DockerHubPassword }}
-#        # Docker repository to tag the image with
-#        repository: ${{ env.ImageName }}
-#        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-#        tags: 'github-${{ env.BuildNumber }}'
-#        # Path to the Dockerfile (Default is '{path}/Dockerfile')
-#        dockerfile: 'Dockerfile'
-#        # Whether to push the image
-#        push: true
+    - name: Push Docker image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: ${{ secrets.DockerHubUser }}
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.DockerHubPassword }}
+        # Docker repository to tag the image with
+        repository: ${{ env.ImageName }}
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 'github-${{ env.BuildNumber }}'
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        dockerfile: 'Dockerfile'
+        # Whether to push the image
+        push: true
