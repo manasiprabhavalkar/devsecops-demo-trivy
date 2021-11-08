@@ -1,0 +1,43 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool: Azure AKS Self-hosted
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Aqua BD ARM connection'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az acr build --image test:latest --registry aquamanasip . --no-push'
+
+    - task: Docker@2
+      displayName: Login into Aqua registry
+      inputs:
+        containerRegistry: "manasiaquaregistry"
+        command: "login"
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo Write your commands here
+          echo Hello world
+          curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
+          chmod +x scannercli
+          pwd
+          ls
+          ./scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/ --image-name aquamanasip.azurecr.io/test:latest --fs-scan /azp/_work/2/s
