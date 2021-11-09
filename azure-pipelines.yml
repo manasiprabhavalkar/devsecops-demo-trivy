@@ -38,10 +38,10 @@ stages:
           echo Hello world
           VERSION="v1.22.0"
           curl -L https://github.com/containerd/containerd/releases/download/v1.4.3/cri-containerd-cni-1.4.3-linux-amd64.tar.gz --output containerd-linux-amd64.tar.gz
-          tar zxvf containerd-linux-amd64.tar.gz -C /usr/local/bin
+          tar zxvf containerd-linux-amd64.tar.gz -C /
           rm -f containerd-linux-amd64.tar.gz
-          systemctl daemon-reload
-          systemctl start containerd
+          service start containerd
+          ctr image ls
           ctr image export image.tar aquamanasip.azurecr.io/test:latest
           curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
           chmod +x scannercli
