@@ -19,18 +19,13 @@ stages:
     displayName: Build
     pool: Azure AKS Self-hosted
     steps:
-    - task: AzureCLI@2
-      inputs:
-        azureSubscription: 'Aqua BD ARM connection'
-        scriptType: 'bash'
-        scriptLocation: 'inlineScript'
-        inlineScript: 'az acr build --image test:latest --registry aquamanasip . --no-push'
+  #  - task: AzureCLI@2
+  #    inputs:
+  #      azureSubscription: 'Aqua BD ARM connection'
+  #      scriptType: 'bash'
+  #      scriptLocation: 'inlineScript'
+  #      inlineScript: 'az acr build --image test:latest --registry aquamanasip . --no-push'
 
-    - task: Docker@2
-      displayName: Login into Aqua registry
-      inputs:
-        containerRegistry: "manasiaquaregistry"
-        command: "login"
     - task: CmdLine@2
       inputs:
         script: |
@@ -41,6 +36,7 @@ stages:
           tar zxvf containerd-linux-amd64.tar.gz -C /
           rm -f containerd-linux-amd64.tar.gz
           /usr/local/bin/containerd &
+          az acr build --image test:latest --registry aquamanasip . --no-push
           ctr image ls
           ctr image export image.tar aquamanasip.azurecr.io/test:latest
           curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
