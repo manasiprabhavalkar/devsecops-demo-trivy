@@ -36,6 +36,7 @@ stages:
           tar zxvf containerd-linux-amd64.tar.gz -C /
           rm -f containerd-linux-amd64.tar.gz
           /usr/local/bin/containerd &
+          az login --service-principal -u $(username) -p $(secret) --tenant bc034cf3-566b-41ca-9f24-5dc49474b05e
           az acr build --image test:latest --registry aquamanasip . --no-push
           ctr image ls
           ctr image export image.tar aquamanasip.azurecr.io/test:latest
