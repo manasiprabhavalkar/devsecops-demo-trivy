@@ -39,7 +39,7 @@ stages:
           export DOCKER_CLI_EXPERIMENTAL=enabled
           #az login --service-principal -u $(user) -p $(secret) --tenant bc034cf3-566b-41ca-9f24-5dc49474b05e
           #az acr build --image test:latest --registry aquamanasip . --no-push
-          docker buildx create --name mybuilder --use
+          docker buildx create --name devops --driver kubernetes --use
           docker buildx build --platform linux/amd64 -t manasi-test:latest .
           ctr image ls
           ctr image export image.tar manasi-test:latest
