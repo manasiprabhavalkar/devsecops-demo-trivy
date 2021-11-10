@@ -35,13 +35,13 @@ stages:
           curl -L https://github.com/containerd/containerd/releases/download/v1.4.3/cri-containerd-cni-1.4.3-linux-amd64.tar.gz --output containerd-linux-amd64.tar.gz
           tar zxvf containerd-linux-amd64.tar.gz -C /
           rm -f containerd-linux-amd64.tar.gz
-          /usr/local/bin/containerd &
+          /usr/local/bin/containerd -l debug &
           export DOCKER_CLI_EXPERIMENTAL=enabled
           #az login --service-principal -u $(user) -p $(secret) --tenant bc034cf3-566b-41ca-9f24-5dc49474b05e
           #az acr build --image test:latest --registry aquamanasip . --no-push
           #docker buildx create --name devops --driver kubernetes --use
           #docker buildx build --platform linux/amd64 -t manasi-test:latest .
-          ctr images pull docker.io/library/nginx:1.13.12-alpine
+          ctr --debug images pull docker.io/library/nginx:1.13.12-alpine
           ctr image ls
           ctr image export image.tar docker.io/library/nginx:1.13.12-alpine
           curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
