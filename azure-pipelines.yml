@@ -19,18 +19,13 @@ stages:
     displayName: Build
     pool: Azure AKS Self-hosted
     steps:
-    - task: AzureCLI@2
-      inputs:
-        azureSubscription: 'Aqua BD ARM connection'
-        scriptType: 'bash'
-        scriptLocation: 'inlineScript'
-        inlineScript: 'az acr build --image test:latest --registry aquamanasip . --no-push'
+  #  - task: AzureCLI@2
+  #    inputs:
+  #      azureSubscription: 'Aqua BD ARM connection'
+  #      scriptType: 'bash'
+  #      scriptLocation: 'inlineScript'
+  #      inlineScript: 'az acr build --image test:latest --registry aquamanasip . --no-push'
 
-    - task: Docker@2
-      displayName: Login into Aqua registry
-      inputs:
-        containerRegistry: "manasiaquaregistry"
-        command: "login"
     - task: CmdLine@2
       inputs:
         script: |
@@ -38,13 +33,19 @@ stages:
           echo Hello world
           VERSION="v1.22.0"
           curl -L https://github.com/containerd/containerd/releases/download/v1.4.3/cri-containerd-cni-1.4.3-linux-amd64.tar.gz --output containerd-linux-amd64.tar.gz
-          tar zxvf containerd-linux-amd64.tar.gz -C /usr/local/bin
+          tar zxvf containerd-linux-amd64.tar.gz -C /
           rm -f containerd-linux-amd64.tar.gz
-          systemctl daemon-reload
-          systemctl start containerd
-          ctr image export image.tar aquamanasip.azurecr.io/test:latest
+          /usr/local/bin/containerd -l debug &
+          export DOCKER_CLI_EXPERIMENTAL=enabled
+          #az login --service-principal -u $(user) -p $(secret) --tenant bc034cf3-566b-41ca-9f24-5dc49474b05e
+          #az acr build --image test:latest --registry aquamanasip . --no-push
+          #docker buildx create --name devops --driver kubernetes --use
+          #docker buildx build --platform linux/amd64 -t manasi-test:latest .
+          ctr --debug images pull docker.io/library/nginx:1.13.12-alpine
+          ctr image ls
+          ctr image export image.tar docker.io/library/nginx:1.13.12-alpine
           curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
           chmod +x scannercli
           pwd
           ls
-          ./scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/ --oci-archive image.tar
+          ./scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/ docker.io/library/nginx:1.13.12-alpine --oci-archive image.tar
