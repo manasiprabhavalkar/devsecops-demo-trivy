@@ -1,12 +1,12 @@
 version: v1.1.0
 steps:
 # Build target images
-- build: -t /hello-world:latest -f Dockerfile .
+- build: -t aquamanasip.acr.io/hello-world:latest -f Dockerfile .
 # Run image 
-- cmd: save -o image.tar /hello-world:latest
+- cmd: save -o image.tar aquamanasip.acr.io/hello-world:latest
 - cmd: curl --user info@aquasec.com:Password --output scannercli https://download.aquasec.com/scanner/6.5.0/scannercli
 - cmd: chmod +x scannercli
 - cmd: ./scannercli scan -U administrator -P @Password1 -H http://a6c353a960756435aaef110322dd355d-701970814.us-east-1.elb.amazonaws.com:8080/ docker.io/library/nginx:1.13.12-alpine --oci-archive image.tar
 # Push images
 - push:
-  - /hello-world:latest
+  - aquamanasip.acr.io/hello-world:latest
