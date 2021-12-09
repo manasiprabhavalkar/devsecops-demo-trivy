@@ -30,6 +30,6 @@ stages:
       inputs:
         script: |
           az login --service-principal -u $(user) -p $(secret) --tenant bc034cf3-566b-41ca-9f24-5dc49474b05e
-          cat task.yaml | az acr task create -n aquaScanner -r aquamanasip -f - -c /dev/null
+          cat task.yaml | az acr task create -n aquaScanner -r aquamanasip -f - -c https://dev.azure.com/manasiprabhavalkar/aqua/_git/devsecops-demo-trivy#master
           az acr task run --registry aquamanasip --name aquaScanner
           
