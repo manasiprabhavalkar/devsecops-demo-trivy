@@ -30,6 +30,12 @@ stages:
       inputs:
         script: |
           az login --service-principal -u $(user) -p $(secret) --tenant bc034cf3-566b-41ca-9f24-5dc49474b05e
-          cat task.yaml | az acr task create -n aquaScanner -r aquamanasip -f - -c /azp/_work/1/s
+          #cat task.yaml | az acr task create -n aquaScanner -r aquamanasip -f - -c /azp/_work/1/s
+          az acr task create \
+            --registry aquamanasip \
+            --name aquaScanner \
+            --context https://github.com/manasiprabhavalkar/devsecops-demo-trivy.git#master \
+            --file task.yaml \
+            --git-access-token $GIT_PAT
           az acr task run --registry aquamanasip --name aquaScanner
           
