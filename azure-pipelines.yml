@@ -37,6 +37,5 @@ stages:
             --context https://github.com/manasiprabhavalkar/devsecops-demo-trivy.git#master \
             --file task.yaml \
             --git-access-token $(GIT_PAT)
-            --set aquaPassword=$(aqua_password)
-          az acr task run --registry aquamanasip --name aquaScanner
+          az acr task run --registry aquamanasip --name aquaScanner --set aquaPassword=$(aqua_password)
           
