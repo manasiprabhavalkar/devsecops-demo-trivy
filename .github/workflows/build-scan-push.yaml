@@ -41,7 +41,7 @@ jobs:
         push: false
 
     - name: Trivy Scan
-      uses: aquasecurity/trivy-action@0.0.22
+      uses: aquasecurity/trivy-action@master
       with:
         # image reference
         image-ref: ${{ env.ImageName }}:github-${{ env.BuildNumber }}
