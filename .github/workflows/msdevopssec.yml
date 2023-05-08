@@ -26,12 +26,29 @@ jobs:
           5.0.x
           6.0.x
 
+    - name: Build Docker image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: ${{ secrets.DockerHubUser }}
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.DockerHubPassword }}
+        # Docker repository to tag the image with
+        repository: ${{ env.ImageName }}
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 'github-${{ env.BuildNumber }}'
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        dockerfile: 'Dockerfile'
+        # Whether to push the image
+        push: false
+        
       # Run analyzers
     - name: Run Microsoft Security DevOps Analysis
       uses: microsoft/security-devops-action@preview
       id: msdo
       env:
         GDN_TRIVY_ACTION: image
+        GDN_TRIVY_TARGET: "."
 
       # Upload alerts to the Security tab
     - name: Upload alerts to Security tab
