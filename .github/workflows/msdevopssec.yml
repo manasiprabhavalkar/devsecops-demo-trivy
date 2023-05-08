@@ -12,7 +12,7 @@ jobs:
 
     # MSDO runs on windows-latest.
     # ubuntu-latest and macos-latest supporting coming soon
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
 
@@ -48,7 +48,7 @@ jobs:
       id: msdo
       env:
         GDN_TRIVY_ACTION: image
-        GDN_TRIVY_TARGET: "."
+        GDN_TRIVY_TARGET: ${{ env.ImageName }}:github-${{ env.BuildNumber }}
 
       # Upload alerts to the Security tab
     - name: Upload alerts to Security tab
