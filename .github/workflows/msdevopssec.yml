@@ -1,10 +1,10 @@
 name: MSDO windows-latest
 
 on:
-  push:
-    branches:
-      - main
-      - master
+#  push:
+#    branches:
+#      - main
+#      - master
   pull_request:
     branches: ["master"]
 
