@@ -204,6 +204,33 @@
       },
       "results": [
         {
+          "ruleId": "Win.Test.EICAR_HDB-1",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Artifact: /eicar.com.txt\nMalware: Win.Test.EICAR_HDB-1\nFile Hash sha1:3395856ce81f2b7382dee72602f798b642f14140"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/eicar.com.txt",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2013-6288",
           "ruleIndex": 0,
           "level": "error",
