@@ -1,0 +1,492 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Premium Vulnerability Scanner",
+          "informationUri": "https://www.aquasec.com",
+          "name": "TrivyPremium",
+          "rules": [
+            {
+              "id": "Win.Test.EICAR_HDB-1",
+              "name": "Malware",
+              "shortDescription": {
+                "text": ""
+              },
+              "fullDescription": {
+                "text": "Win.Test.EICAR_HDB-1"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://www.virustotal.com/gui/file/3395856ce81f2b7382dee72602f798b642f14140",
+              "help": {
+                "text": "Malware Win.Test.EICAR_HDB-1\nFile Hash: sha1:3395856ce81f2b7382dee72602f798b642f14140\nLink: [Win.Test.EICAR_HDB-1](https://www.virustotal.com/gui/file/3395856ce81f2b7382dee72602f798b642f14140)",
+                "markdown": "**Malware Win.Test.EICAR_HDB-1**\n| File Hash | Link |\n| --- | --- |\n|sha1:3395856ce81f2b7382dee72602f798b642f14140|[Win.Test.EICAR_HDB-1](https://www.virustotal.com/gui/file/3395856ce81f2b7382dee72602f798b642f14140)"
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.5",
+                "tags": [
+                  "secret",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2013-6288",
+              "name": "PackageVulnerability",
+              "shortDescription": {
+                "text": "Unspecified vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 has unknown impact and remote attack vectors, related to \u0026#34;Insecure Unserialize.\u0026#34;"
+              },
+              "fullDescription": {
+                "text": "Unspecified vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 has unknown impact and remote attack vectors, related to \u0026#34;Insecure Unserialize.\u0026#34;"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2013-6288",
+              "help": {
+                "text": "Vulnerability CVE-2013-6288\nSeverity: critical\nPackage: apache-solr-for-typo3/solr\nFixed Version: \nExploit Available: \nExploit Type: \nLink: [CVE-2013-6288](https://nvd.nist.gov/vuln/detail/CVE-2013-6288)\nUnspecified vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 has unknown impact and remote attack vectors, related to \"Insecure Unserialize.\"",
+                "markdown": "**Vulnerability CVE-2013-6288**\n| Severity | Package | Fixed Version | Exploit Available | Exploit Type | Link |\n| --- | --- | --- | --- | --- | --- |\n|critical|apache-solr-for-typo3/solr||||[CVE-2013-6288](https://nvd.nist.gov/vuln/detail/CVE-2013-6288)|\n\nUnspecified vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 has unknown impact and remote attack vectors, related to \"Insecure Unserialize.\""
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "0.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2013-6289",
+              "name": "PackageVulnerability",
+              "shortDescription": {
+                "text": "Cross-site scripting (XSS) vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors."
+              },
+              "fullDescription": {
+                "text": "Cross-site scripting (XSS) vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2013-6289",
+              "help": {
+                "text": "Vulnerability CVE-2013-6289\nSeverity: medium\nPackage: apache-solr-for-typo3/solr\nFixed Version: \nExploit Available: \nExploit Type: \nLink: [CVE-2013-6289](https://nvd.nist.gov/vuln/detail/CVE-2013-6289)\nCross-site scripting (XSS) vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+                "markdown": "**Vulnerability CVE-2013-6289**\n| Severity | Package | Fixed Version | Exploit Available | Exploit Type | Link |\n| --- | --- | --- | --- | --- | --- |\n|medium|apache-solr-for-typo3/solr||||[CVE-2013-6289](https://nvd.nist.gov/vuln/detail/CVE-2013-6289)|\n\nCross-site scripting (XSS) vulnerability in the Apache Solr for TYPO3 (solr) extension before 2.8.3 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "0.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "medium"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2023-38500",
+              "name": "PackageVulnerability",
+              "shortDescription": {
+                "text": "TYPO3 HTML Sanitizer is an HTML sanitizer, written in PHP, aiming to provide cross-site-scripting-safe markup based on explicitly allowed tags, attributes and values. Starting in version 1.0.0 and prior to versions 1.5.1 and 2.1.2, due to an encoding issue in the serialization layer, malicious markup nested in a `noscript` element was not encoded correctly. `noscript` is disabled in the default configuration, but might have been enabled in custom scenarios. This allows bypassing the cross-site scripting mechanism of TYPO3 HTML Sanitizer. Versions 1.5.1 and 2.1.2 fix the problem."
+              },
+              "fullDescription": {
+                "text": "TYPO3 HTML Sanitizer is an HTML sanitizer, written in PHP, aiming to provide cross-site-scripting-safe markup based on explicitly allowed tags, attributes and values. Starting in version 1.0.0 and prior to versions 1.5.1 and 2.1.2, due to an encoding issue in the serialization layer, malicious markup nested in a `noscript` element was not encoded correctly. `noscript` is disabled in the default configuration, but might have been enabled in custom scenarios. This allows bypassing the cross-site scripting mechanism of TYPO3 HTML Sanitizer. Versions 1.5.1 and 2.1.2 fix the problem."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2023-38500",
+              "help": {
+                "text": "Vulnerability CVE-2023-38500\nSeverity: medium\nPackage: apache-solr-for-typo3/solr\nFixed Version: 1.5.1, 2.1.2\nExploit Available: \nExploit Type: \nLink: [CVE-2023-38500](https://nvd.nist.gov/vuln/detail/CVE-2023-38500)\nTYPO3 HTML Sanitizer is an HTML sanitizer, written in PHP, aiming to provide cross-site-scripting-safe markup based on explicitly allowed tags, attributes and values. Starting in version 1.0.0 and prior to versions 1.5.1 and 2.1.2, due to an encoding issue in the serialization layer, malicious markup nested in a `noscript` element was not encoded correctly. `noscript` is disabled in the default configuration, but might have been enabled in custom scenarios. This allows bypassing the cross-site scripting mechanism of TYPO3 HTML Sanitizer. Versions 1.5.1 and 2.1.2 fix the problem.",
+                "markdown": "**Vulnerability CVE-2023-38500**\n| Severity | Package | Fixed Version | Exploit Available | Exploit Type | Link |\n| --- | --- | --- | --- | --- | --- |\n|medium|apache-solr-for-typo3/solr|1.5.1, 2.1.2|||[CVE-2023-38500](https://nvd.nist.gov/vuln/detail/CVE-2023-38500)|\n\nTYPO3 HTML Sanitizer is an HTML sanitizer, written in PHP, aiming to provide cross-site-scripting-safe markup based on explicitly allowed tags, attributes and values. Starting in version 1.0.0 and prior to versions 1.5.1 and 2.1.2, due to an encoding issue in the serialization layer, malicious markup nested in a `noscript` element was not encoded correctly. `noscript` is disabled in the default configuration, but might have been enabled in custom scenarios. This allows bypassing the cross-site scripting mechanism of TYPO3 HTML Sanitizer. Versions 1.5.1 and 2.1.2 fix the problem."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "0.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "medium"
+                ]
+              }
+            },
+            {
+              "id": "RSA PRIVATE KEY",
+              "name": "Secret",
+              "shortDescription": {
+                "text": ""
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "defaultConfiguration": {
+                "level": "none"
+              },
+              "helpUri": "https://github.com/aquasecurity/trivy/blob/main/pkg/fanal/secret/builtin-rules.go",
+              "help": {
+                "text": "File Name id_rsa\nFull Path: /home/dependencies/php-pkg/id_rsa",
+                "markdown": "**Sensitive Data id_rsa**\n| File Name |\n| --- |\n|/home/dependencies/php-pkg/id_rsa"
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "",
+                "tags": [
+                  "secret",
+                  "security",
+                  ""
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-2435",
+              "name": "PackageVulnerability",
+              "shortDescription": {
+                "text": "Vulnerability in the MySQL Connectors component of Oracle MySQL (subcomponent: Connector/Python). Supported versions that are affected are 8.0.13 and prior and 2.1.8 and prior. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise MySQL Connectors. Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized creation, deletion or modification access to critical data or all MySQL Connectors accessible data as well as unauthorized access to critical data or complete access to all MySQL Connectors accessible data. CVSS 3.0 Base Score 8.1 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N)."
+              },
+              "fullDescription": {
+                "text": "Vulnerability in the MySQL Connectors component of Oracle MySQL (subcomponent: Connector/Python). Supported versions that are affected are 8.0.13 and prior and 2.1.8 and prior. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise MySQL Connectors. Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized creation, deletion or modification access to critical data or all MySQL Connectors accessible data as well as unauthorized access to critical data or complete access to all MySQL Connectors accessible data. CVSS 3.0 Base Score 8.1 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2019-2435",
+              "help": {
+                "text": "Vulnerability CVE-2019-2435\nSeverity: high\nPackage: mysql-connector-python\nFixed Version: 8.0.19\nExploit Available: \nExploit Type: \nLink: [CVE-2019-2435](https://nvd.nist.gov/vuln/detail/CVE-2019-2435)\nVulnerability in the MySQL Connectors component of Oracle MySQL (subcomponent: Connector/Python). Supported versions that are affected are 8.0.13 and prior and 2.1.8 and prior. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise MySQL Connectors. Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized creation, deletion or modification access to critical data or all MySQL Connectors accessible data as well as unauthorized access to critical data or complete access to all MySQL Connectors accessible data. CVSS 3.0 Base Score 8.1 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N).",
+                "markdown": "**Vulnerability CVE-2019-2435**\n| Severity | Package | Fixed Version | Exploit Available | Exploit Type | Link |\n| --- | --- | --- | --- | --- | --- |\n|high|mysql-connector-python|8.0.19|||[CVE-2019-2435](https://nvd.nist.gov/vuln/detail/CVE-2019-2435)|\n\nVulnerability in the MySQL Connectors component of Oracle MySQL (subcomponent: Connector/Python). Supported versions that are affected are 8.0.13 and prior and 2.1.8 and prior. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise MySQL Connectors. Successful attacks require human interaction from a person other than the attacker. Successful attacks of this vulnerability can result in unauthorized creation, deletion or modification access to critical data or all MySQL Connectors accessible data as well as unauthorized access to critical data or complete access to all MySQL Connectors accessible data. CVSS 3.0 Base Score 8.1 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N)."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "0.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "high"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2012-2671",
+              "name": "PackageVulnerability",
+              "shortDescription": {
+                "text": "The Rack::Cache rubygem 0.3.0 through 1.1 caches Set-Cookie and other sensitive headers, which allows attackers to obtain sensitive cookie information, hijack web sessions, or have other unspecified impact by accessing the cache."
+              },
+              "fullDescription": {
+                "text": "The Rack::Cache rubygem 0.3.0 through 1.1 caches Set-Cookie and other sensitive headers, which allows attackers to obtain sensitive cookie information, hijack web sessions, or have other unspecified impact by accessing the cache."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://nvd.nist.gov/vuln/detail/CVE-2012-2671",
+              "help": {
+                "text": "Vulnerability CVE-2012-2671\nSeverity: high\nPackage: rack-cache\nFixed Version: 1.2\nExploit Available: \nExploit Type: \nLink: [CVE-2012-2671](https://nvd.nist.gov/vuln/detail/CVE-2012-2671)\nThe Rack::Cache rubygem 0.3.0 through 1.1 caches Set-Cookie and other sensitive headers, which allows attackers to obtain sensitive cookie information, hijack web sessions, or have other unspecified impact by accessing the cache.",
+                "markdown": "**Vulnerability CVE-2012-2671**\n| Severity | Package | Fixed Version | Exploit Available | Exploit Type | Link |\n| --- | --- | --- | --- | --- | --- |\n|high|rack-cache|1.2|||[CVE-2012-2671](https://nvd.nist.gov/vuln/detail/CVE-2012-2671)|\n\nThe Rack::Cache rubygem 0.3.0 through 1.1 caches Set-Cookie and other sensitive headers, which allows attackers to obtain sensitive cookie information, hijack web sessions, or have other unspecified impact by accessing the cache."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "0.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "high"
+                ]
+              }
+            }
+          ],
+          "version": ""
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2013-6288",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Package: apache-solr-for-typo3/solr\nInstalled Version: v1.3.0\nVulnerability CVE-2013-6288\nSeverity: critical\nFixed Version: \nExploit Available: \nExploit Type: \nLink: [CVE-2013-6288](https://nvd.nist.gov/vuln/detail/CVE-2013-6288)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/php-pkg/composer.lock:apache-solr-for-typo3/solr",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "/home/dependencies/php-pkg/composer.lock:apache-solr-for-typo3/solr: apache-solr-for-typo3/solr@v1.3.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2013-6289",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: apache-solr-for-typo3/solr\nInstalled Version: v1.3.0\nVulnerability CVE-2013-6289\nSeverity: medium\nFixed Version: \nExploit Available: \nExploit Type: \nLink: [CVE-2013-6289](https://nvd.nist.gov/vuln/detail/CVE-2013-6289)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/php-pkg/composer.lock:apache-solr-for-typo3/solr",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "/home/dependencies/php-pkg/composer.lock:apache-solr-for-typo3/solr: apache-solr-for-typo3/solr@v1.3.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2023-38500",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: apache-solr-for-typo3/solr\nInstalled Version: v1.3.0\nVulnerability CVE-2023-38500\nSeverity: medium\nFixed Version: 1.5.1, 2.1.2\nExploit Available: \nExploit Type: \nLink: [CVE-2023-38500](https://nvd.nist.gov/vuln/detail/CVE-2023-38500)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/php-pkg/composer.lock:apache-solr-for-typo3/solr",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "/home/dependencies/php-pkg/composer.lock:apache-solr-for-typo3/solr: apache-solr-for-typo3/solr@v1.3.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RSA PRIVATE KEY",
+          "ruleIndex": 3,
+          "level": "none",
+          "message": {
+            "text": "Artifact: /home/dependencies/npm-pkg/id_rsa\nSensitive Data: id_rsa"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/npm-pkg/id_rsa",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RSA PRIVATE KEY",
+          "ruleIndex": 3,
+          "level": "none",
+          "message": {
+            "text": "Artifact: /home/dependencies/mysql-connector-python-8.0.0/id_rsa\nSensitive Data: id_rsa"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/mysql-connector-python-8.0.0/id_rsa",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RSA PRIVATE KEY",
+          "ruleIndex": 3,
+          "level": "none",
+          "message": {
+            "text": "Artifact: /home/dependencies/ruby-rack-cache/id_rsa\nSensitive Data: id_rsa"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/ruby-rack-cache/id_rsa",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RSA PRIVATE KEY",
+          "ruleIndex": 3,
+          "level": "none",
+          "message": {
+            "text": "Artifact: /home/dependencies/id_rsa\nSensitive Data: id_rsa"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/id_rsa",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RSA PRIVATE KEY",
+          "ruleIndex": 3,
+          "level": "none",
+          "message": {
+            "text": "Artifact: /home/dependencies/php-pkg/id_rsa\nSensitive Data: id_rsa"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/php-pkg/id_rsa",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-2435",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Package: mysql-connector-python\nInstalled Version: 8.0.0\nVulnerability CVE-2019-2435\nSeverity: high\nFixed Version: 8.0.19\nExploit Available: \nExploit Type: \nLink: [CVE-2019-2435](https://nvd.nist.gov/vuln/detail/CVE-2019-2435)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/mysql-connector-python-8.0.0/mysql-connector-python-8.0.0.dist-info/METADATA",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "/home/dependencies/mysql-connector-python-8.0.0/mysql-connector-python-8.0.0.dist-info/METADATA: mysql-connector-python@8.0.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2012-2671",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Package: rack-cache\nInstalled Version: 0.3.0\nVulnerability CVE-2012-2671\nSeverity: high\nFixed Version: 1.2\nExploit Available: \nExploit Type: \nLink: [CVE-2012-2671](https://nvd.nist.gov/vuln/detail/CVE-2012-2671)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/home/dependencies/ruby-rack-cache/Gemfile.lock",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "/home/dependencies/ruby-rack-cache/Gemfile.lock: rack-cache@0.3.0"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///Users/jyothikumarbehara/go/src/bitbucket.org/scalock/server/automation.azurecr.io/image-language-sensitive:latest/"
+        }
+      },
+      "properties": {
+        "imageName": "automation.azurecr.io/image-language-sensitive:latest",
+        "repoDigests": [
+          "image-language-sensitive@sha256:ccdd492e78c0a80e0aa45ef3b58617e8a801743374168f7016651e748d3f5c64"
+        ],
+        "repoTags": null
+      }
+    }
+  ]
+}
