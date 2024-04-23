@@ -56,6 +56,16 @@ jobs:
       with:
         sarif_file: 'trivyVulnerability.sarif'
 
+    - name: Upload Trivy secrets results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivySensitive.sarif'
+
+    - name: Upload Trivy malware results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivyMalware.sarif'
+
     #- name: Push Docker image
     #  uses: docker/build-push-action@v1.1.0
     #  with:
