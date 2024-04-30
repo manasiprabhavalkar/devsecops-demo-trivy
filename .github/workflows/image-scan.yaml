@@ -54,7 +54,7 @@ jobs:
     - name: Upload Trivy scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v2
       with:
-        sarif_file: 'trivy.sarif'
+        sarif_file: 'trivyExploitable.sarif'
 
     #- name: Push Docker image
     #  uses: docker/build-push-action@v1.1.0
